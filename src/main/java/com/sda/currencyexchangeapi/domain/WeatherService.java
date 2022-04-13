@@ -30,4 +30,8 @@ public class WeatherService {
         // Return weatherDto to user
         return weatherDto;
     }
+
+    public long getDbCounter() {
+        return weatherRepository.count();
+    }
 }

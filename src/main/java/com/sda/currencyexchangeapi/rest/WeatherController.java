@@ -21,4 +21,9 @@ public class WeatherController {
     public WeatherDto getWeather(@PathVariable(name = "cityName") final String cityName) {
         return weatherService.getAndProcessWeather(cityName);
     }
+
+    @GetMapping("/api/db/counter")
+    public long getDbRecordsCounter() {
+        return weatherService.getDbCounter();
+    }
 }

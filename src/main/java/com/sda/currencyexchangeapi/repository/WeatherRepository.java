@@ -1,13 +1,11 @@
 package com.sda.currencyexchangeapi.repository;
 
 import com.sda.currencyexchangeapi.model.Weather;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.UUID;
+
 @Repository
-public class WeatherRepository {
-
-    public void save(Weather weather) {
-        // TODO zapis do bazy danych (h2)
-    }
-
+public interface WeatherRepository extends CrudRepository<Weather, Integer> {
 }

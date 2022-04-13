@@ -7,8 +7,6 @@ import lombok.RequiredArgsConstructor;
 import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
-import java.time.LocalDate;
-import java.util.UUID;
 
 @Data
 @Entity
@@ -18,8 +16,9 @@ import java.util.UUID;
 public class Weather {
 
     @Id
+    @GeneratedValue
     @Column(name = "weather_data_id")
-    private UUID id;
+    private Integer id;
     @Column(name = "city_name")
     private String cityName;
     @Column(name = "temperatur")
@@ -34,7 +33,6 @@ public class Weather {
     private Double windSpeed;
 
     public Weather(String cityName, Double temperature, Long pressure, Long humidity, String windDirection, Double windSpeed) {
-        this.id = UUID.randomUUID();
         this.cityName = cityName;
         this.temperature = temperature;
         this.pressure = pressure;
