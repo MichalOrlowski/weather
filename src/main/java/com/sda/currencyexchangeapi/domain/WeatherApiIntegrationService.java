@@ -19,8 +19,7 @@ public class WeatherApiIntegrationService {
         try {
             return getCurrentDataFromOpenWeatherMap(cityName);
         } catch (IOException e) {
-            // TODO throw RuntimeException and handle it in global handler
-            return null;
+            throw new WeatherProcessingException("Cannot get weather data.");
         }
     }
 
