@@ -20,9 +20,9 @@ public class WeatherService {
         this.weatherMapper = weatherMapper;
     }
 
-    public WeatherDto getAndProcessWeather() {
+    public WeatherDto getAndProcessWeather(String cityName) {
         // Get weather from external service
-        Weather weather = weatherApiIntegrationService.getWeather();
+        Weather weather = weatherApiIntegrationService.getWeather(cityName);
         // Save weather to database
         weatherRepository.save(weather);
         // Map weather to weatherDto

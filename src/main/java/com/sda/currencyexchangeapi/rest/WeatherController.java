@@ -4,6 +4,7 @@ import com.sda.currencyexchangeapi.model.WeatherDto;
 import com.sda.currencyexchangeapi.domain.WeatherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -16,9 +17,8 @@ public class WeatherController {
         this.weatherService = weatherService;
     }
 
-    //TODO dostosuj po integracji z API
-    @GetMapping("/api/weather/10-10-2020/???")
-    public WeatherDto getWeather() {
-        return weatherService.getAndProcessWeather();
+    @GetMapping("/api/weather/{cityName}")
+    public WeatherDto getWeather(@PathVariable(name = "cityName") final String cityName) {
+        return weatherService.getAndProcessWeather(cityName);
     }
 }

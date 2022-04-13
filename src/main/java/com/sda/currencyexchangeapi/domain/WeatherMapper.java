@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 public class WeatherMapper {
 
     public WeatherDto map(Weather weather) {
-        // TODO
-        return null;
+        return new WeatherDto(weather.getTemperature());
     }
 }
